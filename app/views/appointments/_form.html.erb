@@ -1,0 +1,18 @@
+<%= form_for @appointment do |form| %>
+  <div class="field">
+    <%= form.label :details %>
+    <%= form.text_field :details, id: :appointment_details %>
+  </div>
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.text_field :date, id: :appointment_date %>
+  </div>
+  <div class="field">
+    <%= form.label :time %>
+    <%= form.text_field :time, id: :appointment_time %>
+  </div>
+  
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

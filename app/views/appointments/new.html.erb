@@ -1,0 +1,25 @@
+<h1>New Appointment</h1>
+
+<%# <%= render 'form', appointment: @appointment %> 
+
+<%# <%= link_to 'form', appointments_path %> 
+
+<%# write a form. to add a new appointment. all strings. POST request. use form_for %>
+
+<%= form_for @appointment do |f| %>
+  <div>
+    <%= f.label :details %>
+    <%= f.text_field :details %>
+  </div>
+  <div>
+    <%= f.label :time %>
+    <%= f.text_field :time %>
+  </div>
+  <div>
+    <%= f.label :date %>
+    <%= f.text_field :date %>
+  </div>
+  <%= f.submit "Add New Appointment!" %>
+<% end %>
+
+<%= link_to "Back to the list!", appointments_path %>
