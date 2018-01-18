@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   # root 'pages#show', page: 'home'
-  root 'appointments#index'
+  root 'sessions#create', page: 'home'
+  # get '/', to: 'appointments#index', as: :appointments
+  get '/login', to: 'sessions#new'
   resources :appointments
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]
-  get '/login', to: 'sessions#new'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

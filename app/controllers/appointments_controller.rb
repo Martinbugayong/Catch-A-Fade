@@ -2,9 +2,10 @@ class AppointmentsController < ApplicationController
     before_action :set_appointment, only: [:show, :edit, :update, :destroy]
     before_action :authorize, except: [:index, :show]
     def index 
-        @appointments = Appointment.all 
+        @appointments = current_user.appointments 
     end
     def show 
+        @appointment = Appointment.find(params[:id])
     end
 
     def new
@@ -17,19 +18,18 @@ class AppointmentsController < ApplicationController
 
     def create
         @appointment = Appointment.new(appointment_params)
-        respond_to do |format|
-            if @appointment.save
-                format.html { redirect_to @appointment, notice: 'Appointment was sucessfully booked.'}
-            else
-                format.html { render :new }
-            end
+        @appointment.user = current_user
+        if @appointment.save
+            redirect_to @appointment, notice: 'Appointment was sucessfully booked.'
+        else
+            render :new
         end
     end
 
 
     def update 
         @appointment = Appointment.find(params[:id])
-
+        @appointment.user_id = current_user
         if @appointment.update_attributes(appointment_params)
             redirect_to appointments_path 
         else 
@@ -40,6 +40,7 @@ class AppointmentsController < ApplicationController
 
     def destroy 
         @appointment.destroy
+        
         respond_to do |format|
             format.html { redirect_to appointments_url, notice: 'Appointment was sucessfully destroyed.'}
         end

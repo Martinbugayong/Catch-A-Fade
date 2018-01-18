@@ -1,21 +1,24 @@
 <p id="notice"><%= notice%></p>
 
+<% if current_user %>
 <h1>Your Appointments</h1>
-<table>
+<table class="apt">
     <thead>
     </thead>
     <tbody>
         <% @appointments.each do |appointment| %>
             <tr>
+            <div class="deets">
                 <td><%= appointment.details %></td>
+            </div>
                 <td><%= appointment.date %></td>
                 <td><%= appointment.time %></td>
                 <td><%= link_to 'View', appointment %></td>
                 <td><%= link_to 'Reschedule', edit_appointment_path(appointment) %></td>
-                <td><%= link_to 'Cancel', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <td class="btn" id="destroy" ><%= link_to 'Cancel', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
         <% end %>
-            <h4><%= link_to 'Create', new_appointment_path %></h4>
+        <h4><%= link_to 'Book a Fade', new_appointment_path %></h4>
     </tbody>
 </table>
-
+<% end %>

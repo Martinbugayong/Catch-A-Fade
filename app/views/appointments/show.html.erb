@@ -4,7 +4,8 @@
   <strong>Details:</strong>
   <%= @appointment.details %>
 </p>
-
-<%= link_to 'Edit', edit_appointment_path(@appointment) %> |
-<%= link_to 'Create', new_appointment_path(@appointment) %> |
-<%= link_to 'Back', appointment_path %>
+<div>
+    <p class="links"><%= link_to 'Home', appointments_path %></p>
+    <p class="links"><%= link_to 'Reschedule', edit_appointment_path(@appointment) %></p>
+    <%# <p class="links"><%= link_to 'Book A Fade', new_appointment_path(@appointment) %>
+</div>
