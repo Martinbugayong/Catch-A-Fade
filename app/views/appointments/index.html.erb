@@ -1,7 +1,7 @@
 <p id="notice"><%= notice%></p>
 
 <% if current_user %>
-<h1>Your Appointments</h1>
+<h1>Booked Fades</h1>
 <table class="apt">
     <thead>
     </thead>
@@ -15,10 +15,10 @@
                 <td><%= appointment.time %></td>
                 <td><%= link_to 'View', appointment %></td>
                 <td><%= link_to 'Reschedule', edit_appointment_path(appointment) %></td>
-                <td class="btn" id="destroy" ><%= link_to 'Cancel', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <td><%= link_to 'Cancel', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
         <% end %>
-        <h4><%= link_to 'Book a Fade', new_appointment_path %></h4>
     </tbody>
 </table>
+<h4><%= link_to 'Book a Fade', new_appointment_path %></h4>
 <% end %>

@@ -20,7 +20,7 @@ class AppointmentsController < ApplicationController
         @appointment = Appointment.new(appointment_params)
         @appointment.user = current_user
         if @appointment.save
-            redirect_to @appointment, notice: 'Appointment was sucessfully booked.'
+            redirect_to @appointment, notice: 'Your fade was sucessfully booked.'
         else
             render :new
         end
@@ -29,7 +29,7 @@ class AppointmentsController < ApplicationController
 
     def update 
         @appointment = Appointment.find(params[:id])
-        @appointment.user_id = current_user
+
         if @appointment.update_attributes(appointment_params)
             redirect_to appointments_path 
         else 
@@ -42,7 +42,7 @@ class AppointmentsController < ApplicationController
         @appointment.destroy
         
         respond_to do |format|
-            format.html { redirect_to appointments_url, notice: 'Appointment was sucessfully destroyed.'}
+            format.html { redirect_to appointments_url, notice: 'Fade was sucessfully canceled'}
         end
     end
 

@@ -1,11 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Details:</strong>
-  <%= @appointment.details %>
+  <strong>Your Fade details: </strong>
+  <%= @appointment.details %> on
+  <%= @appointment.date %> at 
+  <%= @appointment.time %> 
 </p>
 <div>
     <p class="links"><%= link_to 'Home', appointments_path %></p>
     <p class="links"><%= link_to 'Reschedule', edit_appointment_path(@appointment) %></p>
-    <%# <p class="links"><%= link_to 'Book A Fade', new_appointment_path(@appointment) %>
 </div>
