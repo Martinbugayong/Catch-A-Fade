@@ -12,7 +12,7 @@
 * Heroku 
 
 ## Features 
-* this is a Full CRUD application so you can 
+* This is a Full CRUD application so you can 
     * Create, read, edit/update, and delete appointments 
 
     * Log in and Sign in capability with passwords. 
