@@ -4,12 +4,12 @@
     <%= form.date_field :date, id: :appointment_date %>
   </div>
   <div class="field">
-    <%= form.label :time %>
-    <%= form.select :time, options_for_select([['1pm','1pm'],['2pm','2pm'],['3pm','3pm'],['4pm','4pm'],['5pm','5pm'],['6pm','6pm'],['7pm','7pm'],['8pm','8pm']]) %>
-  </div>
-  <div class="field">
     <%= form.label :details %>
     <%= form.text_field :details, id: :appointment_details %>
+  </div>
+  <div class="field1">
+    <%= form.label :time %>
+    <%= form.select :time, options_for_select([['1pm','1pm'],['2pm','2pm'],['3pm','3pm'],['4pm','4pm'],['5pm','5pm'],['6pm','6pm'],['7pm','7pm'],['8pm','8pm']]) %>
   </div>
   
   <div class="actions">
