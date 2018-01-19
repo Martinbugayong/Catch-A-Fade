@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       flash[:notice] = "You have successfully signed up to Catch A Fade!"
-      redirect_to root_path
+      redirect_to appointments_path
     else
       render :new
     end

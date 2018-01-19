@@ -15,12 +15,16 @@
  */
 
  * { 
-    background: gainsboro;
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: 'Rock Salt', cursive;
+    /* color: red; */
 }
 
 h1 {
     text-align: center;
+    font-size: 40px;
+    width: 100%;
+    margin: 0;
 }
 
 h4 {
@@ -28,13 +32,23 @@ h4 {
     font-size: 20px;
 }
 
-#destroy {
-    color: red;
-}
-
 table {
     display: flex;
     justify-content: center;
+}
+
+.body {
+    background-color: rgba(255, 255, 255, 0.658);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    align-content: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    color: red;
+
 }
 
 body {
@@ -43,14 +57,17 @@ body {
     align-items: center;
     flex-flow: column;
     align-content: center;
-    margin: 25px;
-    padding: 100px;
+    margin: 0;
+    padding: 0;
+    background-image: url(http://mr-sweeneytodd.com/wp-content/uploads/2014/11/22.jpg);
+    height: 900px;
 }
 
 label {
     display: flex;
     justify-content: center;
     margin: 10px;
+    font-size: 15px;
 }
 
 .links {
@@ -72,13 +89,49 @@ label {
 
 a {
     text-decoration: none;
-    color: blue;
+    color:rgb(255, 0, 0);
 }
 
 a:hover {
     text-decoration: underline;
 }
 
-.destroy {
-    color: red;
+.actions {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+div.column {
+    display: flex;
+    align-content: center;
+    text-align: center;
+}
+
+.signup {
+    display: flex;
+    display: inline-block;  
+    align-content: center;
+    text-align: center;
+}
+
+.back {
+    margin-top: 10px;
+}
+
+.submit {
+    margin-top: 10px;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-self: flex-end;
+    
+    text-align: center;
+    font-size: 15px;
+    color: white;
+    font-style: italic;
 }

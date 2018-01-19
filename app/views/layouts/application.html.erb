@@ -3,27 +3,34 @@
   <head>
     <title>CatchAFade</title>
     <%= csrf_meta_tags %>
+    <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <body>
-    <p>
-      <% if current_user && current_user.admin %>
-        Welcome Master Fader, <%= current_user.name %>
-        &nbsp;&nbsp;|&nbsp;&nbsp;
-        <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
-      <% elsif current_user %>
-        Welcome, <%= current_user.name %>
-        &nbsp;&nbsp;|&nbsp;&nbsp;
-        <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
-      <% else %>
-        <%= link_to 'Log In', login_path %>
-        &nbsp;&nbsp;|&nbsp;&nbsp;
-        <%= link_to 'Sign Up', new_user_path %>
-      <% end %>
-    </p>
-    <%= yield %>
-  </body>
+<div class="body">
+<body>
+  <p>
+    <% if current_user && current_user.admin %>
+      Welcome Master Fader, <%= current_user.name %>
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
+    <% elsif current_user %>
+     Welcome, <%= current_user.name %>
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
+    <% else %>
+      <%= link_to 'Log In', login_path %>
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      <%= link_to 'Sign Up', new_user_path %>
+    <% end %>
+  </p>
+  <%= yield %>
+</body>
+</div>
+<div class="about">
+  <footer>
+    @2017 AMBC 
+  </footer>
+</div>
 </html>
