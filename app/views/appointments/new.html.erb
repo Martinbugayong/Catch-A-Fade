@@ -8,16 +8,16 @@
 
 <%= form_for @appointment do |f| %>
   <div>
-    <%= f.label :details %>
-    <%= f.text_field :details %>
-  </div>
-  <div>
     <%= f.label :time %>
-    <%= f.text_field :time %>
+    <%= f.select :time, options_for_select([['1pm','1pm'],['2pm','2pm'],['3pm','3pm'],['4pm','4pm'],['5pm','5pm'],['6pm','6pm'],['7pm','7pm'],['8pm','8pm']])%>
   </div>
   <div>
     <%= f.label :date %>
     <%= f.date_field :date %>
+  </div>
+  <div>
+    <%= f.label :details %>
+    <%= f.text_field :details %>
   </div>
   <%= f.submit "Add New Appointment!" %>
 <% end %>
