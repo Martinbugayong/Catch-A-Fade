@@ -3,7 +3,7 @@ class AppointmentsController < ApplicationController
     before_action :authorize
 
     def index
-        if (current_user.admin)
+        if (current_user && current_user.admin)
             @appointments = Appointment.where("date > ?", Date.yesterday)
         else
             @appointments = current_user.appointments 
