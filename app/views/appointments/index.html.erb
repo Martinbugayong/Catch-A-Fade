@@ -1,16 +1,17 @@
 <p id="notice"><%= notice%></p>
 
-<% if current_user %>
-<h1>Booked Fades</h1>
+<% if current_user.admin %>
+    <h1>Your upcoming fade's</h1>
+<% else %>
+    <h1>Booked Fades</h1>
+<% end %>
 <table class="apt">
     <thead>
     </thead>
     <tbody>
         <% @appointments.each do |appointment| %>
             <tr>
-            <div class="deets">
                 <td><%= appointment.details %></td>
-            </div>
                 <td><%= appointment.date %></td>
                 <td><%= appointment.time %></td>
                 <td><%= link_to 'View', appointment %></td>
@@ -21,4 +22,3 @@
     </tbody>
 </table>
 <h4><%= link_to 'Book a Fade', new_appointment_path %></h4>
-<% end %>

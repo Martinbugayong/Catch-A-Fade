@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # root 'pages#show', page: 'home'
-  root 'sessions#create', page: 'home'
+  root 'sessions#new'
   # get '/', to: 'appointments#index', as: :appointments
   get '/login', to: 'sessions#new'
   resources :appointments

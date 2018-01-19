@@ -1,8 +1,13 @@
 class AppointmentsController < ApplicationController
     before_action :set_appointment, only: [:show, :edit, :update, :destroy]
-    before_action :authorize, except: [:index, :show]
-    def index 
-        @appointments = current_user.appointments 
+    before_action :authorize
+
+    def index
+        if (current_user.admin)
+            @appointments = Appointment.where("date > ?", Date.yesterday)
+        else
+            @appointments = current_user.appointments 
+        end
     end
     def show 
         @appointment = Appointment.find(params[:id])
