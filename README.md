@@ -22,7 +22,7 @@
 ## [Heres a link to my trello board](https://trello.com/b/kKnjwwLh/catchafade)
 
 ## Unsolved problems 
-* no double booking appointments.
+* Double booking appointments.
 
 ## Whats next 
 When i'm able to I would like to launch this full time and maintain it for my barber.
